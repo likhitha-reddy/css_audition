@@ -9,16 +9,22 @@ export const Navbar = () => {
   const logout = () => {
     setCookies("access_token", "");
     window.localStorage.clear();
-    navigate("/auth");
+    navigate("/");
   };
   return (
-    <div className="navbar ">
+
+    <div className="flex justify-between max-w-full bg-black py-5">
+    
+      <div className="flex justify-between items-center   mx-auto px-4 sm:px-6 ">
+  
      {!cookies.access_token ? (
-        <Link to="/register">Login/Register</Link>
+        <Link className=" text-center mt-4 text-xl font-medium text-purple-500 hover:text-purple-400" to="/register">Login/Register</Link>
       ) : (
-        <button onClick={logout}> Logout </button>
+        <button className="text-center mt-4 text-xl font-medium text-purple-500 hover:text-purple-400" onClick={logout}> Logout </button>
       )}
-     
-    </div>
+     </div>
+     </div>
+  
+    
   );
 };

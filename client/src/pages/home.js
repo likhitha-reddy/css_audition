@@ -8,8 +8,9 @@ export const Home = () => {
  
   return (
     <div>
-      <h1 className="line-through text-slate-50	">you have successfully logged in</h1>
-      
+      <h1 className="text-2xl font-extrabold underline">
+      Home Page
+    </h1>
       
     </div>
   );

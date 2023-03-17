@@ -24,18 +24,19 @@ export const Login = () => {
 
       setCookies("access_token", result.data.token);
       window.localStorage.setItem("userID", result.data.userID);
-      navigate("/");
+      navigate("/loggedin");
     } catch (error) {
-      console.error(error);
+      alert(error.response.data.message);
     }
   };
 
   return (
-    <div className="auth-container">
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div className="form-group">
-          <label htmlFor="email">email:</label>
+
+    <div className=" flex justify-center	">
+    <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+      
+      <div className="mb-4">
+      <label htmlFor="email">email:</label>
           <input
           required
             type="text"
@@ -43,9 +44,9 @@ export const Login = () => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+      </div>
+      <div className="form-group">
+      <label htmlFor="password">Password:</label>
           <input
           required
             type="password"
@@ -53,10 +54,18 @@ export const Login = () => {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
-        </div>
-        <button className="button"  type="submit">Login</button>
-      </form>
-    </div>
+      </div>
+      
+      
+      
+      <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit"
+       >Login</button>
+    </form>
+  </div>
+
+
+
+  
   );
 };
 
