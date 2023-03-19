@@ -12,10 +12,15 @@ export const Login = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-  const handleOtp = async (event) => {
-    event.preventDefault();
-    navigate('/otp')
-  };
+  const googleAuth = () => {
+		window.open(
+			`http://localhost:3001/auth/google/callback`,
+			"_self"
+    )
+	setCookies("access_token", "jwt");
+
+};
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -44,9 +49,7 @@ export const Login = () => {
 		</div>
 		<div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
 			<div className="max-w-md mx-auto">
-				<div>
-					<h1 className="text-2xl font-semibold">Login </h1>
-				</div>
+				
 				<div className="divide-y divide-gray-200">
 					<div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
 						<div className="relative">
@@ -67,10 +70,10 @@ export const Login = () => {
 						<div className="relative">
 							<button onClick={handleSubmit} className="bg-blue-500 text-white rounded-md px-2 py-1">Login</button>
 						</div>
-            <div className="relative">
-							<button onClick={handleOtp} className="bg-blue-100 text-blue-500 rounded-md px-2 py-1">Login with  otp</button>
-						</div>
+            
+					<button  onClick={googleAuth} className="uppercase h-12 mt-3 text-white w-full rounded bg-red-400 hover:bg-red-900"><i class="fa fa-google mr-2"></i>Google</button>
 
+            
            
 					</div>
 				</div>

@@ -5,7 +5,6 @@ import { Navbar } from "./components/navbar";
 import { Home } from "./pages/home";
 import Loggedin from "./pages/loggedin";
 import { Login } from "./pages/login";
-import OtpLogin from "./pages/otpLogin";
 import { Register } from "./pages/register.js";
 
 
@@ -23,7 +22,7 @@ function App() {
           
           <Route path="/register" element={<Register />} />
           <Route  path="/login" element={<Login />} />
-          <Route path="/otp" element={<OtpLogin />} />
+          
         
         </Routes>
         
