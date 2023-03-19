@@ -13,14 +13,14 @@ export const Navbar = () => {
   };
   return (
 
-    <div className="flex justify-between max-w-full bg-black py-5">
+    <div className="flex justify-between max-w-full bg-blue-50 py-5">
     
       <div className="flex justify-between items-center   mx-auto px-4 sm:px-6 ">
   
      {!cookies.access_token ? (
-        <Link className=" text-center mt-4 text-xl font-medium text-purple-500 hover:text-purple-400" to="/register">Login/Register</Link>
+        <Link className=" text-center mt-4 text-xl font-medium text-blue-500 hover:text-blue-400" to="/register">Login/Register</Link>
       ) : (
-        <button className="text-center mt-4 text-xl font-medium text-purple-500 hover:text-purple-400" onClick={logout}> Logout </button>
+        <button className="text-center mt-4 text-xl font-medium text-blue-500 hover:text-blue-400" onClick={logout}> Logout </button>
       )}
      </div>
      </div>
